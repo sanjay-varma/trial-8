@@ -6,7 +6,7 @@ function PriceCard(props) {
     const [price, setPrice] = useState({});
 
     const updatePrice = () => {
-        fetch(`https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=INR,USD,JPY&api_key=${APIKEY}`)
+        fetch(`https://min-api.cryptocompare.com/data/price?fsym=${props.sym}&tsyms=INR,USD,JPY&api_key=${APIKEY}`)
             .then((res) => res.json())
             .then((res) => setPrice(res))
     }
